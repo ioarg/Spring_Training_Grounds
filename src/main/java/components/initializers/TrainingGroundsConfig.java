@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebMvc
 @Configuration
-@ComponentScan({"components"})
+@ComponentScan({"components", "model/common"})
 public class TrainingGroundsConfig implements WebMvcConfigurer {
     private static final String RESOURCE_BASE = "classpath:/static_resources/";
 

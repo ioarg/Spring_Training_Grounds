@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>Spring Training Grounds</title>
     <link rel="stylesheet" href="<c:url value='/styles/bootstrap.min.css'/>" >
-    <link rel="stylesheet" href="<c:url value='/styles/home.css'/>" >
+    <link rel="stylesheet" href="<c:url value='/styles/common.css'/>" >
+    <link rel="stylesheet" href="<c:url value='/styles/streams_style.css'/>" >
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
@@ -14,6 +15,31 @@
 <div class="container">
      <div class="content-container">
         <h4>Streams Training</h4>
+        <p>Full Menu</p>
+        <table class="table table-custom table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Vegetarian</th>
+                    <th scope="col">Calories</th>
+                    <th scope="col">Type</th>
+                </tr>
+            </thead>
+            <c:forEach var="dish" items="${menu}">
+                <tr>
+                    <td><c:out value="${dish.name}"/></td>
+                    <td><c:out value="${dish.vegetarian}"/></td>
+                    <td><c:out value="${dish.calories}"/></td>
+                    <td><c:out value="${dish.type}"/></td>
+                </tr>
+            </c:forEach>
+        </table>
+        <p>High Caloric Meals (>300)</p>
+        <table class="table table-custom table-dark table-striped">
+            <c:forEach var="name" items="${high_caloric_meals}">
+                <tr><td><c:out value="${name}"/></td></tr>
+            </c:forEach>
+        </table>
     </div>
 </div>
 </body>

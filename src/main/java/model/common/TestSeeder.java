@@ -4,11 +4,19 @@ import java.util.Arrays;
 import java.util.List;
 
 import model.streams.Dish;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Scope("singleton")
 public final class TestSeeder {
 
-    public static void seedDishes(List<Dish> dishes){
-        dishes = Arrays.asList(
+    public TestSeeder(){
+
+    }
+
+    public List<Dish> seedDishes(){
+        return Arrays.asList(
                 new Dish("pork", false, 800, Dish.Type.MEAT),
                 new Dish("beef", false, 700, Dish.Type.MEAT),
                 new Dish("chicken", false, 400, Dish.Type.MEAT),

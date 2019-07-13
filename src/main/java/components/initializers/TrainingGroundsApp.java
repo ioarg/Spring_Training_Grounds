@@ -10,7 +10,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletRegistration;
 
 public class TrainingGroundsApp implements WebApplicationInitializer {
-    private static Logger console = LoggerFactory.getLogger(TrainingGroundsApp.class);
+
     @Override
     public void onStartup(ServletContext servlet_context){
         AnnotationConfigWebApplicationContext appContext = new AnnotationConfigWebApplicationContext();
@@ -21,6 +21,5 @@ public class TrainingGroundsApp implements WebApplicationInitializer {
         dispatcherConf.setLoadOnStartup(1);
         dispatcherConf.addMapping("/");
         dispatcherConf.setInitParameter("throwExceptionIfNoHandlerFound", "true");
-        console.info("Application Started..");
     }
 }

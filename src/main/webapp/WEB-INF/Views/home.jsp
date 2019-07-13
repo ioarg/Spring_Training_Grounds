@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Spring Training Grounds</title>
     <link rel="stylesheet" href="<c:url value='/styles/bootstrap.min.css'/>" >
-    <link rel="stylesheet" href="<c:url value='/styles/home.css'/>" >
+    <link rel="stylesheet" href="<c:url value='/styles/common.css'/>" >
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
