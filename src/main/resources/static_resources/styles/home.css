@@ -1,3 +1,48 @@
+.navbar-brand{
+    font-weight:bold;
+    font-size:16pt;
+}
+
 .content-container{
     padding : 20px;
+    width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+.content-container > p{
+    margin-bottom: 40px;
+    color:#999999;
+}
+
+.box{
+    padding:10px;
+    display:block;
+    border-radius: 5px;
+    float:left;
+    width:120px;
+    height:140px;
+    background-color:#eeeedd;
+    box-shadow: 1px 1px 2px black;
+}
+
+.box > p {
+    color: #444444;
+    margin-bottom: 40px;
+}
+
+.box > a {
+    text-decoration: none;
+    display:block;
+    border-radius: 5px;
+    width:70%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color:#cc4444;
+    color:white;
+}
+
+.box > a:hover {
+    background-color:#dd5544;
 }
