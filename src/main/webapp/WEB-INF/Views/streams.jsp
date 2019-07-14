@@ -34,15 +34,15 @@
                 </tr>
             </c:forEach>
         </table>
-        <p>High Caloric Meals (>300)</p>
-        <table class="table table-custom table-dark table-striped">
-            <c:forEach var="name" items="${high_caloric_meals}">
-                <tr><td><c:out value="${name}"/></td></tr>
-            </c:forEach>
-        </table>
+        <div class="button-container">
+            <div id="high_cl_btn" class="btn btn-info">High Caloric Meals</div>
+            <div id="veg_btn" class="btn btn-info">Vegetarian Meals</div>
+        </div>
+        <div id="result-container"></div>
     </div>
 </div>
 </body>
 <script src="<c:url value='/scripts/jquery-3.3.1.min.js'/>" ></script>
 <script src="<c:url value='/scripts/bootstrap.min.js'/>" ></script>
+<script src="<c:url value='/scripts/streams.js'/>" ></script>
 </html>

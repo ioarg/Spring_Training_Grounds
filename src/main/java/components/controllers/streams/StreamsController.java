@@ -10,6 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,6 +25,9 @@ public class StreamsController {
     private TestSeeder testSeeder;
     private List<Dish> dishes;
 
+    /******************************************************
+     *  Initialization
+     * ****************************************************/
     @PostConstruct
     public void init(){
         dishes = testSeeder.seedDishes();
@@ -29,15 +35,35 @@ public class StreamsController {
         ListUtils.printList(dishes, console);
     }
 
+    /******************************************************
+     *  Mappings
+     * ****************************************************/
+
     @GetMapping("")
     public String getStreamTrainingHome(Model model){
-        List<String> highCaloricMeals = dishes.stream()
-                .filter((d)->d.getCalories() > 300)
-                .map(Dish::getName)
-                .collect(Collectors.toList());
         model.addAttribute("menu", dishes);
-        model.addAttribute("high_caloric_meals", highCaloricMeals);
         return "streams";
     }
 
+    @GetMapping("/async")
+    @ResponseBody
+    public List<Dish> getFilteredMeals(@RequestParam String filter){
+        List<Dish> filteredMeals = null;
+        switch (filter){
+            case "highCalories" : filteredMeals = getHighCaloricMeals(); break;
+            default: break;
+        }
+        return filteredMeals;
+    }
+
+    /******************************************************
+     *  Internal Functionality
+     * ****************************************************/
+
+    private List<Dish> getHighCaloricMeals(){
+        List<Dish> highCaloricMeals = dishes.stream()
+                .filter((d)->d.getCalories() > 300)
+                .collect(Collectors.toList());
+        return highCaloricMeals;
+    }
 }
