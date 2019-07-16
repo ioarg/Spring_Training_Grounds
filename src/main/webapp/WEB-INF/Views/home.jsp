@@ -1,6 +1,8 @@
+<%@page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Spring Training Grounds</title>
@@ -13,8 +15,25 @@
 </nav>
 <div class="container">
     <div class="content-container">
-        <h4>Welcome to Spring Training Grounds</h4>
-        <p>Click a box to view a selected training result</p>
+        <h4><spring:message code="home_greeting" text="default"/></h4>
+        <p><spring:message code="home_selection" text="default"/></p>
+        <div class="box-container">
+            <div class="box">
+                <p>Choose Language</p>
+                <div class="custom-control custom-radio">
+                    <input id="radio_lang_en" type="radio" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="radio_lang_en">
+                        <spring:message code="lang.eng" text="default"/>
+                    </label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input id="radio_lang_el" type="radio" name="customRadio" class="custom-control-input">
+                    <label class="custom-control-label" for="radio_lang_el">
+                        <spring:message code="lang.el" text="default"/>
+                    </label>
+                </div>
+            </div>
+        </div>
         <div class="box-container">
             <div class="box">
                 <p>Streams Training</p>
@@ -26,4 +45,5 @@
 </body>
 <script src="<c:url value='/scripts/jquery-3.3.1.min.js'/>" ></script>
 <script src="<c:url value='/scripts/bootstrap.min.js'/>" ></script>
+<script src="<c:url value='/scripts/home.js'/>" ></script>
 </html>

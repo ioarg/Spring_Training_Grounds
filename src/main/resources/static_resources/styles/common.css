@@ -19,17 +19,18 @@
 .box{
     padding:10px;
     display:block;
-    border-radius: 5px;
+    border-radius:5px;
     float:left;
     width:120px;
     height:140px;
     background-color:#eeeedd;
     box-shadow: 1px 1px 2px black;
+    margin-right:20px;
 }
 
 .box > p {
     color: #444444;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 .box > a {
