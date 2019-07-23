@@ -24,6 +24,7 @@ public class StreamsController {
     @Autowired
     private TestSeeder testSeeder;
     private List<Dish> dishes;
+    //private int visits;
 
     /******************************************************
      *  Initialization
@@ -33,6 +34,7 @@ public class StreamsController {
         dishes = testSeeder.seedDishes();
         console.info("****** Init Executed ******");
         ListUtils.printList(dishes, console);
+        //visits = 0;
     }
 
     /******************************************************
@@ -41,11 +43,13 @@ public class StreamsController {
 
     @GetMapping("")
     public String getStreamTrainingHome(Model model){
+        /*visits ++;
+        console.info(String.valueOf(visits));*/
         model.addAttribute("menu", dishes);
         return "streams";
     }
 
-    @GetMapping("/async")
+    @GetMapping(path = "/async", produces = "application/json;charset=UTF-8")
     @ResponseBody
     public List<Dish> getFilteredMeals(@RequestParam String filter){
         List<Dish> filteredMeals = null;

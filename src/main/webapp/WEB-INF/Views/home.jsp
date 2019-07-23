@@ -40,6 +40,12 @@
                 <a  href="<c:url value='streams_training'/>">Go!</a>
             </div>
         </div>
+        <div class="box-container">
+            <div class="box">
+                <p>Customer Database</p>
+                <a  href="<c:url value='/customer'/>">Go!</a>
+            </div>
+        </div>
     </div>
 </div>
 </body>
