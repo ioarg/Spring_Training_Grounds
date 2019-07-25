@@ -1,7 +1,7 @@
 package components.controllers.db_proj1;
 
 import model.customer_db.Customer;
-import model.customer_db.CustomerDAO;
+import model.customer_db.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +15,11 @@ import java.util.List;
 public class CustomerController {
 
     @Autowired
-    private CustomerDAO customerDAO;
+    private CustomerService customerService;
 
     @GetMapping("")
     public String customerHomePage(Model model){
-        List<Customer> customers = customerDAO.getCustomers();
+        List<Customer> customers = customerService.getCustomers();
         model.addAttribute("customers", customers);
         return "customers";
     }
