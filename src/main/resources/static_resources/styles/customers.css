@@ -13,3 +13,18 @@
 #result-container{
     margin-top: 20px;
 }
+
+.tb_small_btn{
+    width:150px;
+    padding:2px;
+    font-size:10pt;
+}
+
+.delete_btn{
+    background-color: #cc4444;
+    border-color: #cc4444; 
+}
+
+.delete_btn > a:hover {
+    background-color:#dd5544 !important;
+}

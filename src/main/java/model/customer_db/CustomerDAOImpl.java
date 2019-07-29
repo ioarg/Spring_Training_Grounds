@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -27,8 +26,25 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
+    public Customer getCustomer(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Customer customer = session.get(Customer.class, id);
+        return customer;
+    }
+
+    //Uses save or update. Checks if the customer has an id
+    @Override
     public void saveCustomer(Customer customer) {
         Session session = sessionFactory.getCurrentSession();
-        session.save(customer);
+        session.saveOrUpdate(customer);
+    }
+
+    @Override
+    public List<Customer> deleteCustomer(int id) {
+        Session session = sessionFactory.getCurrentSession();
+        Query<Customer> query = session.createQuery("delete from Customer where id=:customer_id");
+        query.setParameter("customer_id", id);
+        query.executeUpdate();
+        return getCustomers();
     }
 }

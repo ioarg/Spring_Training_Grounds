@@ -30,4 +30,21 @@ public class CustomerAjax {
         customerService.saveCustomer(customer);
         return customerService.getCustomers();
     }
+
+    @GetMapping("/retrieve")
+    public Customer getCustomerById(@RequestParam int id){
+        return customerService.getCustomer(id);
+    }
+
+    @GetMapping("/delete")
+    public List<Customer> deleteCustomerById(@RequestParam int id){
+        return customerService.deleteCustomer(id);
+    }
+
+    @PostMapping("/edit")
+    public List<Customer> editCustomer(@RequestBody Customer customer){
+        console.info(customer.toString());
+
+        return customerService.getCustomers();
+    }
 }
