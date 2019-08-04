@@ -3,6 +3,7 @@ package model.common;
 import java.util.Arrays;
 import java.util.List;
 
+import model.rest.students.Student;
 import model.streams.Dish;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -26,5 +27,13 @@ public final class TestSeeder {
                 new Dish("pizza", true, 550, Dish.Type.OTHER),
                 new Dish("prawns", false, 300, Dish.Type.FISH),
                 new Dish("salmon", false, 450, Dish.Type.FISH) );
+    }
+
+    public List<Student> seedStudents(){
+        return Arrays.asList(
+                new Student("Mario", "Rosi"),
+                new Student("Fatima", "Patel"),
+                new Student("Mary", "Smith")
+        );
     }
 }

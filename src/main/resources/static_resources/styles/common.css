@@ -1,3 +1,7 @@
+h4{
+    margin-bottom: 20px;
+}
+
 .navbar-brand{
     font-weight:bold;
     font-size:16pt;
@@ -12,24 +16,25 @@
 }
 
 .content-container > p{
-    margin-bottom: 40px;
-    color:#999999;
+    margin-bottom: 20px;
+    color: #999999;
+    margin-top: 40px;
 }
 
 .box{
     padding:10px;
-    display:block;
+    display:inline-block;
+    vertical-align: top;
     border-radius:5px;
-    float:left;
     width:120px;
     height:140px;
-    background-color:#eeeedd;
+    background-color:#50ef7a;
     box-shadow: 1px 1px 2px black;
     margin-right:20px;
 }
 
 .box > p {
-    color: #444444;
+    color: #135d24;
     margin-bottom: 25px;
 }
 
@@ -40,10 +45,25 @@
     width:70%;
     margin-left:auto;
     margin-right:auto;
-    background-color:#cc4444;
+    background-color:#d07f2d;
     color:white;
 }
 
 .box > a:hover {
-    background-color:#dd5544;
+    background-color:#d0ad2d;
+}
+
+.text_align_left{
+    text-align: left;
+
+}
+
+.normal_p{
+    color:black;
+}
+
+.data_block{
+    background-color: #d5ecd9;
+    border-radius: 5px;
+    padding:10px;
 }

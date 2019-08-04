@@ -16,8 +16,15 @@
 <div class="container">
     <div class="content-container">
         <h4><spring:message code="home_greeting" text="default"/></h4>
+        <div class="text_align_left data_block">
+            <p class="normal_p">REST Endpoints to use :</p>
+            <ul>
+                <li><a href="<c:url value='/rest_proj1/hello'/>">/rest_proj1/hello</a></li>
+                <li><a href="<c:url value='/rest_proj1/students'/>">/rest_proj1/students</a></li>
+            </ul>
+        </div>
         <p><spring:message code="home_selection" text="default"/></p>
-        <div class="box-container">
+        <div id="box_container" class="data_block">
             <div class="box">
                 <p>Choose Language</p>
                 <div class="custom-control custom-radio">
@@ -33,14 +40,10 @@
                     </label>
                 </div>
             </div>
-        </div>
-        <div class="box-container">
             <div class="box">
                 <p>Streams Training</p>
                 <a  href="<c:url value='streams_training'/>">Go!</a>
             </div>
-        </div>
-        <div class="box-container">
             <div class="box">
                 <p>Customer Database</p>
                 <a  href="<c:url value='/customer'/>">Go!</a>
