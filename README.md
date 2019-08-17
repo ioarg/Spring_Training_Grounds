@@ -1,4 +1,4 @@
-##Spring Training Grounds
+## Spring Training Grounds
 
 This is a Web Application project for experimenting with different features of 
 Java and Spring. It's meant for personal testing and experimentation only, 
