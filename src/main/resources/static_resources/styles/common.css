@@ -28,13 +28,13 @@ h4{
     border-radius:5px;
     width:120px;
     height:140px;
-    background-color:#50ef7a;
+    background-color:#10b9cc;
     box-shadow: 1px 1px 2px black;
     margin-right:20px;
 }
 
 .box > p {
-    color: #135d24;
+    color: #dbf9ff;
     margin-bottom: 25px;
 }
 
@@ -45,7 +45,7 @@ h4{
     width:70%;
     margin-left:auto;
     margin-right:auto;
-    background-color:#d07f2d;
+    background-color:#da6721;
     color:white;
 }
 
@@ -63,7 +63,11 @@ h4{
 }
 
 .data_block{
-    background-color: #d5ecd9;
+    background-color: #f7f7f7;
     border-radius: 5px;
     padding:10px;
+}
+
+.custom-control-label{
+    color: #c1ff9c;
 }
